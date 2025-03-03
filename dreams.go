@@ -24,14 +24,6 @@ func main() {
     
     for true {
 
-        /* let program sleep */
-    
-        time.Sleep(time.Duration(*wait) * time.Minute)
-        
-        /* show the message if running command */
-        
-        fmt.Println("dreams: Running command", *command)
-
         /* let program execute the program */
 
         cmd := exec.Command(*command)
@@ -40,5 +32,13 @@ func main() {
         if err != nil {
             fmt.Printf("dreams: Error executing command: %s\n", err)
         }
+        
+        /* let program sleep */
+
+        time.Sleep(time.Duration(*wait) * time.Minute)
+
+        /* show the message if running command */
+
+        fmt.Println("dreams: Running command", *command)
     }
 }
