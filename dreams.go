@@ -23,6 +23,10 @@ func main() {
     /* start the infinite loop */
     
     for true {
+        
+        /* show the message if running command */
+
+        fmt.Println("dreams: Running command", *command)
 
         /* let program execute the program */
 
@@ -36,9 +40,5 @@ func main() {
         /* let program sleep */
 
         time.Sleep(time.Duration(*wait) * time.Minute)
-
-        /* show the message if running command */
-
-        fmt.Println("dreams: Running command", *command)
     }
 }
