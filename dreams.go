@@ -7,23 +7,14 @@ import (
     "os/exec"
 )
 
-/* default flag variables */
-
-var (
-    wait *int
-    command *string
-)
-
-/* parse arguments using flag */
-
-func init() {
-    wait = flag.Int("wait", 1, "Set the execution time.")
-    command = flag.String("command", "random-wallpaper", "Set the command.")
-}
-
 /* function to be run by program */
 
 func main() {
+ 
+    /* parse arguments using flag */
+
+    wait := flag.Int("wait", 1, "Set the execution time.")
+    command := flag.String("command", "random-wallpaper", "Set the command.")
     
     /* parse flags */
     
@@ -37,6 +28,10 @@ func main() {
     
         time.Sleep(time.Duration(*wait) * time.Minute)
         
+        /* show the message if running command */
+        
+        fmt.Println("dreams: Running command", *command)
+
         /* let program execute the program */
 
         cmd := exec.Command(*command)
