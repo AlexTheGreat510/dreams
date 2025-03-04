@@ -43,12 +43,18 @@ func main() {
     }
 
     /* start the infinite loop */
+    
+    var runCount int = 0
 
     for true {
+        
+        /* increment command run count */
+        
+        runCount++
 
         /* show the message if running command */
 
-        fmt.Printf("dreams: Running command '%s'\n", *command)
+        fmt.Printf("dreams[%d]: Running command '%s'\n", runCount, *command)
 
         /* let program execute the program */
 
