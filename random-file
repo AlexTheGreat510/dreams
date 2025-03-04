@@ -1,0 +1,7 @@
+#! /bin/sh
+
+# get random file for specified directory
+file="$(find $@ | sort -R | tail -n 1)"
+
+# show the random file
+echo "$file"
