@@ -44,4 +44,5 @@ jobs:
           draft: false
           prerelease: false
 
-          artifacts: dreams
+          artifacts: |
+            dreams
