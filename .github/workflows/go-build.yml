@@ -29,23 +29,3 @@ jobs:
       with:
         name: dreams
         path: dreams
-
-    - name: release
-      uses: actions/create-release@v1
-      id: create_release
-      with:
-        draft: false
-        prerelease: false
-        release_name: "Release"
-        tag_name: "Release"
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-
-    - name: upload linux artifact
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dreams
-        asset_name: dreams
